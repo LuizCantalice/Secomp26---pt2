@@ -45,7 +45,8 @@ shape = SubResource("RectangleShape2D_ue0df")
 texture_filter = 3
 sprite_frames = SubResource("SpriteFrames_j5ohv")
 animation = &"idle"
-frame_progress = 0.41793486
+autoplay = "idle"
+frame_progress = 0.97950923
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1402047282]
 
