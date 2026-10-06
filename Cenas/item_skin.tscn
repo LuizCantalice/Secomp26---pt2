@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bi2856elnrd1r"]
+
+[ext_resource type="Script" uid="uid://bk72bkuq33ksb" path="res://item_skin.gd" id="1_u0spn"]
+[ext_resource type="Texture2D" uid="uid://bk0yoodf3057x" path="res://Sprites/skins/CharacterItem/GorroBranco.png" id="2_373qc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ih8qs"]
+radius = 11.0
+
+[node name="Item_skin" type="Area2D" unique_id=1614568114]
+script = ExtResource("1_u0spn")
+skin_number = 2
+sprite_item = ExtResource("2_373qc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=717265917]
+shape = SubResource("CircleShape2D_ih8qs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1778607478]
+texture_filter = 3
+position = Vector2(-1, 4)
+texture = ExtResource("2_373qc")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
