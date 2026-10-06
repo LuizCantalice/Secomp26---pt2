@@ -3,9 +3,11 @@ class_name Player
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+@export var bullet:PackedScene
 @onready var dash_timer: Timer = $dash_timer
 var dash:float = 1
 var jump_count:int = 0
+@onready var mira: Marker2D = $mira
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -29,6 +31,9 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED*dash
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	if Input.is_action_just_pressed("shoot"):
+		shoot()
 
 	UpdateAnimations(direction)
 	move_and_slide()
@@ -52,3 +57,10 @@ func _on_dash_timer_timeout() -> void:
 	print_debug("timeout")
 	dash = 1
 	
+func shoot():
+	print_debug("atirei!")
+	var b = bullet.instantiate()
+	if animated_sprite_2d.flip_h:
+		b.speed *= -1
+	get_tree().get_first_node_in_group("Fase").add_child(b)
+	b.transform = mira.global_transform

@@ -41,12 +41,12 @@ script = ExtResource("1_ue0df")
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_ue0df")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=897791410]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=897791410 groups=["enemy"]]
 texture_filter = 3
 sprite_frames = SubResource("SpriteFrames_j5ohv")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.97950923
+frame_progress = 0.25903597
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1402047282]
 

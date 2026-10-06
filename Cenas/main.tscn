@@ -294,7 +294,7 @@ sources/0 = SubResource("TileSetAtlasSource_k18kc")
 [sub_resource type="LabelSettings" id="LabelSettings_7xu14"]
 font_size = 29
 
-[node name="Node" type="Node" unique_id=794085147]
+[node name="Node" type="Node" unique_id=794085147 groups=["Fase"]]
 
 [node name="FinishLine" parent="." unique_id=1276187415 instance=ExtResource("1_ja1os")]
 position = Vector2(3872, 2740)
@@ -329,9 +329,9 @@ label_settings = SubResource("LabelSettings_7xu14")
 [node name="CharacterBody2D" parent="." unique_id=179754948 instance=ExtResource("3_qwfx2")]
 position = Vector2(153.00012, 2879)
 
-[node name="thwomp" parent="." unique_id=1617240415 instance=ExtResource("5_ja1os")]
+[node name="thwomp" parent="." unique_id=1617240415 groups=["enemy"] instance=ExtResource("5_ja1os")]
 position = Vector2(534, 2630)
 scale = Vector2(2.5, 2.5)
 
-[node name="CharacterBody2D2" parent="." unique_id=926112256 instance=ExtResource("6_qns0q")]
+[node name="CharacterBody2D2" parent="." unique_id=926112256 groups=["enemy"] instance=ExtResource("6_qns0q")]
 position = Vector2(2154, 2667)
