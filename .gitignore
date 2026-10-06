@@ -1,0 +1,6 @@
+# Godot 4+ specific ignores
+.godot/
+
+# assets externos
+Pixel Adventure 1.zip
+Pixel Adventure 1/
