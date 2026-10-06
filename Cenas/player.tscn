@@ -197,7 +197,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_phfiu"]
-size = Vector2(21, 26)
+size = Vector2(19.100002, 31.400002)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=179754948]
 scale = Vector2(2.5, 2.5)
@@ -219,14 +219,13 @@ scale = Vector2(0.99999994, 0.99999994)
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1966837325]
-position = Vector2(0.9999999, 6)
+position = Vector2(0.05000067, 3.2999995)
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_phfiu")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=983512938]
 offset = Vector2(0, -30)
 limit_left = 25
-limit_bottom = 3025
 drag_horizontal_enabled = true
 drag_vertical_offset = -1.0
 drag_left_margin = 0.06
