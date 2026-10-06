@@ -5,6 +5,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -200.0
 var going_up:bool = false
 @onready var timer: Timer = $Timer
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -13,6 +14,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		going_up = true
 		timer.start()
+		animated_sprite_2d.play("up")
 	
 	if going_up:
 		velocity.y = JUMP_VELOCITY
@@ -26,3 +28,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func _on_timer_timeout() -> void:
 	going_up = false
+	animated_sprite_2d.play("down")
+	

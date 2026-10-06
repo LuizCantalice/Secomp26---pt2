@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dtw5ijgcjdm7n"]
+
+[ext_resource type="Texture2D" uid="uid://bfttrb7kebbqn" path="res://Sprites/inimigos/Sprite-0001-Sheet-Sheet.png" id="1_6tuhi"]
+[ext_resource type="Script" uid="uid://dlqc1vxoij01g" path="res://Cenas/mosca.gd" id="1_ue0df"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ue0df"]
+size = Vector2(14, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ue0df"]
+atlas = ExtResource("1_6tuhi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5ohv"]
+atlas = ExtResource("1_6tuhi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j5ohv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ue0df")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5ohv")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjtm0"]
+size = Vector2(22, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jso0p"]
+radius = 61.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=926112256]
+script = ExtResource("1_ue0df")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1659193780]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ue0df")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=897791410]
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_j5ohv")
+animation = &"idle"
+frame_progress = 0.12657452
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1402047282]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1620148348]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_hjtm0")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=684274602]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=529822911]
+shape = SubResource("CircleShape2D_jso0p")
+
+[node name="Timer" type="Timer" parent="." unique_id=713904174]
+
+[connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
