@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://eerlutva14qx" path="res://Sprites/Mapa/Yellow.png" id="1_ojuq8"]
 [ext_resource type="Texture2D" uid="uid://ca676pon0m4m3" path="res://Sprites/Mapa/Terrain (16x16).png" id="2_alrhq"]
 [ext_resource type="PackedScene" uid="uid://tkjippyut5hd" path="res://Cenas/player.tscn" id="3_qwfx2"]
+[ext_resource type="PackedScene" uid="uid://ldwg4igahx3b" path="res://Cenas/thwomp.tscn" id="5_ja1os"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k18kc"]
 texture = ExtResource("2_alrhq")
@@ -326,3 +327,7 @@ label_settings = SubResource("LabelSettings_7xu14")
 
 [node name="CharacterBody2D" parent="." unique_id=179754948 instance=ExtResource("3_qwfx2")]
 position = Vector2(153.00012, 2879)
+
+[node name="thwomp" parent="." unique_id=1617240415 instance=ExtResource("5_ja1os")]
+position = Vector2(534, 2630)
+scale = Vector2(2.5, 2.5)

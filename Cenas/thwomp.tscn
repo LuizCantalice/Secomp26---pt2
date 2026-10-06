@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://ldwg4igahx3b"]
+
+[ext_resource type="Texture2D" uid="uid://oq4hwuqfy3jk" path="res://Sprites/inimigos/thwomp_anim.png" id="1_q7s61"]
+[ext_resource type="Script" uid="uid://1qc5nb545b7u" path="res://Cenas/thwomp.gd" id="1_sero4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xypg2"]
+size = Vector2(18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sero4"]
+atlas = ExtResource("1_q7s61")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8fly"]
+atlas = ExtResource("1_q7s61")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fokvy"]
+atlas = ExtResource("1_q7s61")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2plyf"]
+atlas = ExtResource("1_q7s61")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fm8t"]
+atlas = ExtResource("1_q7s61")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jso0p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sero4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8fly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fokvy")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2plyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fm8t")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jso0p"]
+size = Vector2(26, 31)
+
+[node name="thwomp" type="CharacterBody2D" unique_id=1617240415]
+script = ExtResource("1_sero4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=529796216]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_xypg2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=111110798]
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_jso0p")
+animation = &"down"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2100997216]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=509413467]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_jso0p")
+
+[node name="Timer" type="Timer" parent="." unique_id=1791729396]
+one_shot = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
