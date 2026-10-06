@@ -319,11 +319,12 @@ tile_set = SubResource("TileSet_yy31t")
 
 [node name="Label" type="Label" parent="." unique_id=1689482220]
 modulate = Color(0, 0, 0, 1)
-offset_left = 1050.0
-offset_top = 2385.0
-offset_right = 1132.0
-offset_bottom = 2428.0
-text = "FINAL"
+offset_left = 64.0
+offset_top = 2519.0
+offset_right = 146.0
+offset_bottom = 2562.0
+text = "F - Tiro
+Shift - Dash"
 label_settings = SubResource("LabelSettings_7xu14")
 
 [node name="CharacterBody2D" parent="." unique_id=179754948 instance=ExtResource("3_qwfx2")]
